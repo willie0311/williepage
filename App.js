@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View,Drawer } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack';
 
-import homeRoute from './src/home';
-import pageRoute from './src/page';
-import {  } from 'react-native-paper';
+import homeRoute from './src/routes/Home';
+import pageRoute from './src/routes/Page';
+// import {  } from 'react-native-paper';
+
+const Stack = createStackNavigator();
 
 export default class App extends Component{
   render(){
     return (
       <NavigationContainer>
-        <Drawer.Navigator>
-          <Drawer.Screen name='home' component={homeRoute}/>
-          <Drawer.Screen name='page' component={pageRoute}/>
-        </Drawer.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen name='Home' component={homeRoute}/>
+          <Stack.Screen name='Page' component={pageRoute}/>
+        </Stack.Navigator>
       </NavigationContainer>
     );
   }
